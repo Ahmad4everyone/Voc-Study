@@ -1,18 +1,53 @@
 const quizData = [
     {
     question: "The science tht deals with the study of crops and field management is called:",
-    options: ["agronomy", "botany", "entomology", "horticulture", "pathology"],
+    options: ["agronomy", "botany", "horticulture", "pathology"],
     answer: "agronomy"
 },
 {
-    question: "Which of the following is a dicotyledon plant?",
-    options: [ "sisal", "pineapple", "rice", "cassava", "sugarcane"],
+    question: "Which of the following is a dicotyledonous plant?",
+    options: [ "sisal", "rice", "cassava", "sugarcane"],
     answer: "cassava"
 },
 {
-    question: "The most limiting factor in agricultural production in Nigeria is.",
-    options: ["farm inputs", "capital","labour","farm machinery", "land"],
+    question: "The most limiting factor in agricultural production in Nigeria is?",
+    options: [ "capital","labour","farm machinery", "land"],
     answer: "capital"
+},
+{
+    question: "Mechanized land clearing is done by:",
+    options: ["bush burning", "caterpillar", "cutlass", "grader",],
+    answer: "caterpillar"
+},
+{
+    question: "An andvantage of commercial agriculture is that?",
+    options: ["requires small space", "requires skilled labour", "involves low capital", "all of the above"],
+    answer: "all of the above"
+},
+{
+    question: "Which of following is a complete form of rest?",
+    options: ["exercise", "rest", "sleep", "standing"],
+    answer: "sleep"
+},
+{
+    question: "Cooking food by heat in an enclosed space is what?",
+    options: ["steaming", "baking", "frying", "boiling"],
+    answer: "steaming"
+},
+{
+    question: "___ and ____ are cure for fatigue?",
+    options:["reading & sewing", "rest & sleep", "singing & washing", "running & jogging"],
+    answer: "rest & sleep"
+},
+{
+    question: "The green revolution is an example of government agricultural what?",
+    options: ["extension", "policy", "programme", "research"],
+    answer: "programme"
+},
+{
+    question: "The Nigerian land use of Act of 1978 puts the right of land on the?",
+    options: ["Governor of a state", "head of the society", "President of the farmers co-operative", "traditional rulers"],
+    answer: "Governor of a state"
 },
 ];
 
@@ -20,7 +55,7 @@ const quizData = [
 let currentQueInd = 0;
 let score = 0;
 let timer;
-let timeLeft = 5;
+let timeLeft = 15;
 let studentName = "";
 
 const nameInputSection = document.getElementById("nameinput-section");
@@ -33,8 +68,12 @@ const optionsElement = document.getElementById("options");
 const timerElement = document.getElementById("time-left");
 const feedbackElement = document.getElementById("feedback");
 const resultMessageElement = document.getElementById("result-message");
+const voc = document.getElementById("voc");
+
 
 startQuizBtn.addEventListener("click", () => {
+
+    voc.style.display = "none";
     studentName = studentNameInput.value.trim();
     if (studentName === '') {
         alert("please fill in your name!");
@@ -45,6 +84,7 @@ startQuizBtn.addEventListener("click", () => {
     loadQuestion();
     startTimer();
 });
+
 function loadQuestion(){
     const currentQuestion = quizData[currentQueInd];
     questionElement.textContent = currentQuestion.question;
@@ -68,7 +108,7 @@ else{
 clearInterval(timer);
 currentQueInd++;
 if(currentQueInd < quizData.length) {
-    timeLeft = 5;
+    timeLeft = 15;
     startTimer();
     loadQuestion();
 } else {
@@ -85,7 +125,7 @@ function startTimer () {
             feedbackElement.textContent = "Time's up!";
             currentQueInd++;
             if(currentQueInd < quizData.length) {
-                timeLeft = 5;
+                timeLeft = 15;
                 startTimer();
                 loadQuestion();
             } else{
@@ -98,5 +138,5 @@ function startTimer () {
 function showResult(){
     quizSection.classList.add("hidden");
     resultSection.classList.remove("hidden");
-    resultMessageElement.textContent = `${studentName} you scored ${score} out of ${quizData.length}!`
+    resultMessageElement.textContent = `${studentName}!  you scored ${score} out of ${quizData.length}.`
 }

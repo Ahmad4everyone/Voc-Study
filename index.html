@@ -8,21 +8,21 @@
 </head>
 <body>
     <div class="quiz-contn">
-        <h1>Vocational-Study Quiz</h1>
+        <h2 id="voc">Vocational-Study Quiz!</h2>
         <div id="nameinput-section">
-            <label for="student-name">Enter your name:</label>
+            <!-- <label for="student-name">Enter your name:</label> -->
             <input type="text" id="student-name" placeholder="Your name">
-            <button id="start-quiz">Start Quiz</button>
+            <button id="start-quiz">Commence</button>
         </div>
 
         <div id="quiz-section" class="hidden">
-            <h2 id="question"></h2>
+            <h3 id="question" style="color: teal;"></h3>
             <div id="options"></div>
-            <p id="timer">Time Left: <span id="time-left">5</span>seconds</p>
+            <p id="timer">Time Left: <span id="time-left">15</span>seconds</p>
             <p id="feedback"></p>
         </div>
         <div id="result-section" class="hidden">
-        <h2>Quiz Completed!</h2>
+        <h3 style="color: red;">Quiz Completed!</h3>
         <p id="result-message"></p>
         </div>
     </div>
