@@ -49,6 +49,31 @@ const quizData = [
     options: ["Governor of a state", "head of the society", "President of the farmers co-operative", "traditional rulers"],
     answer: "Governor of a state"
 },
+{
+    question: "The main reason for establishing game reserve is to prevent wild-life from:",
+    options: ["being poached", "being hunted periodically", "attacking tourists", "becoming extint"],
+    answer: "being poached"
+},
+{
+    question: "The biotic factor which derives much from livestock and reduces productivity is a ?",
+    options: ["predator", "temperature", "pathogen", "parasite"],
+    answer: "parasite"
+},
+{
+    question: "Which of the following groups of crops grow best in the savannah zone of west africa?",
+    options: ["maize, millet and groundnut", "cocoa, kola and palmoil", "cotton, cocoa and guinea-corn", "banana, rubber and milet"],
+    answer: "maize, millet and groundnut"
+},
+{
+    question: "The different between subsidy and loan is that subsidy is:",
+    options: ["a short term credit while loan is long term credit", "is a medium term credit while loan is a long term credit", "requires a collateral while loan doesn't", "none of the above"],
+    answer: "none of the above"
+},
+{
+    question: "Which of the following is a form of complete rest?",
+    options:["exercise", "rest", "sleep", "standing"],
+    answer: "sleep"
+}
 ];
 
 
