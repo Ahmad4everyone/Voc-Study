@@ -73,14 +73,44 @@ const quizData = [
     question: "Which of the following is a form of complete rest?",
     options:["exercise", "rest", "sleep", "standing"],
     answer: "sleep"
-}
+},
+{
+    question: "The simplest form of of seam is?",
+    options:["french seam", "lapped seam", "overlaid seam", "open seam"],
+    answer: "open seam"
+},
+{
+    question: "Whenever the skin is opened, torn or punctured by a sharp object, the result is:",
+    options:["puncture", "bite", "cut", "burn"],
+    answer: "cut"
+},
+{
+    question: "In ______ service, the guests help themselves with the food:",
+    options: ["tray", "family-style", "plate", "buffet"],
+    answer: "buffet",
+}, 
+{
+    question: "_____ can be made into refreshing and nutricious drink?",
+    options: ["white beans", "soya beans", "brown beans", "red beans"],
+    answer: "soya beans"
+}, 
+{
+    question: "Which of the following groups comprises oily crops",
+    options: ["groundnut, jute and cotton", "melon, coconut and sunflower", "sunflower, rubber and jute", "palmoil, sunflower and millet"],
+    answer: "palmoil, sunflower and millet"
+},
+{
+    question: "Pests of crop that feed by piercing and sucking include the following EXCEPT:",
+    options: ["stem borers", "aphids", "cocoa mirids", "cotton stainer"],
+    answer: "stem borers"
+},
 ];
 
 
 let currentQueInd = 0;
 let score = 0;
 let timer;
-let timeLeft = 15;
+let timeLeft = 20;
 let studentName = "";
 
 const nameInputSection = document.getElementById("nameinput-section");
@@ -94,7 +124,7 @@ const timerElement = document.getElementById("time-left");
 const feedbackElement = document.getElementById("feedback");
 const resultMessageElement = document.getElementById("result-message");
 const voc = document.getElementById("voc");
-
+const rest = document.getElementById("rest");
 
 startQuizBtn.addEventListener("click", () => {
 
@@ -133,7 +163,7 @@ else{
 clearInterval(timer);
 currentQueInd++;
 if(currentQueInd < quizData.length) {
-    timeLeft = 15;
+    timeLeft = 20;
     startTimer();
     loadQuestion();
 } else {
@@ -150,7 +180,7 @@ function startTimer () {
             feedbackElement.textContent = "Time's up!";
             currentQueInd++;
             if(currentQueInd < quizData.length) {
-                timeLeft = 15;
+                timeLeft = 20;
                 startTimer();
                 loadQuestion();
             } else{
@@ -165,3 +195,7 @@ function showResult(){
     resultSection.classList.remove("hidden");
     resultMessageElement.textContent = `${studentName}!  you scored ${score} out of ${quizData.length}.`
 }
+
+rest.addEventListener("click", () => {
+    window.location.reload();
+})
